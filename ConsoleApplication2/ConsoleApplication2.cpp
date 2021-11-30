@@ -1,4 +1,4 @@
-﻿#include<stdio.h>
+#include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
 #include<iostream>
@@ -10,47 +10,52 @@ void clear();
 
 int main()
 {
+    setlocale(LC_ALL, "Russian");
+    int length;
+    cout << "Введите длину массива: " << endl;
+    cin >> length;
+    int* array = new int[length];
+    fillArray(array, length);
+    int m = 0;
+    cout fillArray (array, length);
     
-    fillArray(array, 22);
-    findEvensInArray(array, 22);
 
     return 0;
-    
-    int k, n, p, m;
-    cout << "n= ";
-    cin >> n;
-    p = 10;
-    for (int k = 1; k <= n; k++)
-    {
-        m = k * k;
-        if (p < k) p *= 10;
-        if (m % p == k)
-            cout << k << " " << m << endl;
-    }
-    system("pause");
+
 }
 
-void fillArray(int* array, int length, int m)
+void fillArray(int* array, int length)
 {
-     
-     for (int k = 1; k <= n; k++)
-     {
-        m = k * k;
-     }
-}
-
-void findEvensInArray(int* array, int length,)
-{
-     cout << "n= ";
-     cin >> n;
-     p = 10;
-    if (p < k) p *= 10;
+    int m;
+    for (int i = 1; i <= length; i++)
     {
-    if (m % p == k)
-        {    
-            cout << k << " " << m << endl;
+        m = i * i;
+
+        while (cc < k && m)
+        {
+            cc += p * (m % 10);
+            m /= 10;
+            p *= 10;
         }
+        if (cc == k) cout << k;
     }
+}
+
+void findEvensInArray(int* array, int length, int* m)
+{
+    int cc = 0;
+    int p = 1;
+    for (int i = 1; i <= length; i++)
+    {
+        while (cc < k && m) 
+        {
+            cc += p * (m % 10);
+            m /= 10;
+            p *= 10;
+        }
+        if (cc == k) cout << k;
+    }
+
 }
 
 // 15.    найти номер первого элемента, который совпадает с квад-ратом последующего.
